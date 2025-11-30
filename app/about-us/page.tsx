@@ -32,7 +32,7 @@ export default function AboutUsPage() {
                 <div className="text-center mb-16">
                     <h1 className="font-serif text-4xl md:text-5xl text-stone-900 mb-4">About Chouhan Group</h1>
                     <p className="text-stone-500 max-w-2xl mx-auto">
-                        Shaping Central India's landscapes with excellence since 1998
+                        Shaping Central India&apos;s landscapes with excellence since 1998
                     </p>
                 </div>
 
@@ -44,7 +44,7 @@ export default function AboutUsPage() {
                             Founded in 1998 by Mr. Ajay Chouhan, Chouhan Group has earned its reputation as the most reliable real estate developer in Central India through an unwavering commitment to quality, timely delivery, and customer trust.
                         </p>
                         <p>
-                            Our legacy of excellence spans over two decades, marked by a steadfast belief that homes are the foundation of joyful lives and aspirations. We've been shaping Bhilai's residential and commercial landscapes with iconic buildings that have become integral parts of their communities.
+                            Our legacy of excellence spans over two decades, marked by a steadfast belief that homes are the foundation of joyful lives and aspirations. We&apos;ve been shaping Bhilai&apos;s residential and commercial landscapes with iconic buildings that have become integral parts of their communities.
                         </p>
                         <p>
                             Expanding our commitment to excellence, Chouhan Group has diversified into the automotive and hospitality sectors. Chouhan Automobiles, featuring the exclusive Maruti Suzuki ARENA and NEXA showrooms, is a leading dealership in Chhattisgarh. Additionally, our hospitality ventures, including Empyrean Hotels and Empyrean Lake Resorts, reflect our dedication to providing comprehensive services that meet diverse lifestyle needs.
@@ -61,7 +61,7 @@ export default function AboutUsPage() {
                         <div className="bg-white p-8 rounded-xl shadow-sm border border-stone-200 hover:shadow-lg transition">
                             <h3 className="text-xl font-bold text-orange-600 mb-4">Real Estate</h3>
                             <p className="text-stone-600">
-                                Shaping Bhilai's residential and commercial landscapes with iconic buildings since 1998.
+                                Shaping Bhilai&apos;s residential and commercial landscapes with iconic buildings since 1998.
                             </p>
                         </div>
 
