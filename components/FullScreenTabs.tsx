@@ -25,7 +25,7 @@ export default function FullScreenTabs() {
       {/* Background Image - Blurred/Darkened */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1600585154341-1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+          src="https://images.unsplash.com/photo-1600596542815-2a4d9fdd4070?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
           alt="Background"
           fill
           className="object-cover opacity-40 blur-sm"
