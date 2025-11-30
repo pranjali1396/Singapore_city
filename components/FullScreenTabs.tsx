@@ -22,17 +22,6 @@ export default function FullScreenTabs() {
   return (
     <div className="relative w-full min-h-screen bg-cream font-sans text-dark-green flex flex-col">
 
-      {/* Background Image - Blurred/Darkened */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/media/Phase 1/Photos and Videos_/chouhan-singaporecity01.webp"
-          alt="Background"
-          fill
-          className="object-cover opacity-40 blur-sm"
-          priority
-        />
-        <div className="absolute inset-0 bg-cream/30" />
-      </div>
 
       {/* Top Header Area (Logo & Register Button) */}
       <div className="sticky top-0 z-50 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-4 flex justify-between items-start bg-cream/90 backdrop-blur-sm shadow-sm">
