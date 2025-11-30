@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import { phases, getPhaseIndex, getAdjacentPhaseSlugs } from '@/data/phases'
 import PhaseHeader from '@/components/PhaseHeader'
 import PhaseCard from '@/components/PhaseCard'
