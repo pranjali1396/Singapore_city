@@ -13,7 +13,7 @@ export default function GalleryPage() {
     const gallerySection = activePhase?.sections.find(s => s.title === 'Gallery')
     const images = gallerySection?.media?.map(media => ({
         ...media,
-        phaseName: activePhase.shortLabel
+        phaseName: activePhase?.shortLabel || ''
     })) || []
 
     return (
@@ -52,8 +52,8 @@ export default function GalleryPage() {
                     <button
                         onClick={() => setActivePhaseId(1)}
                         className={`px-8 py-3 rounded-lg font-bold uppercase tracking-wider text-sm transition-all ${activePhaseId === 1
-                                ? 'bg-dark-green text-cream shadow-lg'
-                                : 'bg-white text-dark-green border-2 border-dark-green hover:bg-dark-green hover:text-cream'
+                            ? 'bg-dark-green text-cream shadow-lg'
+                            : 'bg-white text-dark-green border-2 border-dark-green hover:bg-dark-green hover:text-cream'
                             }`}
                     >
                         Phase 1 & 2
@@ -61,8 +61,8 @@ export default function GalleryPage() {
                     <button
                         onClick={() => setActivePhaseId(4)}
                         className={`px-8 py-3 rounded-lg font-bold uppercase tracking-wider text-sm transition-all ${activePhaseId === 4
-                                ? 'bg-dark-green text-cream shadow-lg'
-                                : 'bg-white text-dark-green border-2 border-dark-green hover:bg-dark-green hover:text-cream'
+                            ? 'bg-dark-green text-cream shadow-lg'
+                            : 'bg-white text-dark-green border-2 border-dark-green hover:bg-dark-green hover:text-cream'
                             }`}
                     >
                         Phase 4

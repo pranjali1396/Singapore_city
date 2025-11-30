@@ -38,7 +38,7 @@ export default function PrivacyPolicyPage() {
                     <section>
                         <h2 className="text-2xl font-bold text-stone-800 mb-4">1. Introduction</h2>
                         <p className="text-stone-600 leading-relaxed">
-                            Welcome to Singapore Life City ("we," "our," or "us"), a project by Chouhan Group. We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or engage with our services.
+                            Welcome to Singapore Life City (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;), a project by Chouhan Group. We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or engage with our services.
                         </p>
                     </section>
 
