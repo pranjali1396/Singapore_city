@@ -22,14 +22,14 @@ export default function GalleryPage() {
             {/* Header */}
             <div className="sticky top-0 z-50 w-full bg-cream/90 backdrop-blur-sm shadow-sm border-b border-stone-100">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-                    <Link href="/" className="flex items-center gap-2 group">
-                        <div className="w-8 h-8 bg-dark-green rounded flex items-center justify-center border border-dark-green text-cream group-hover:bg-orange-500 group-hover:border-orange-500 transition-colors">
-                            <span className="font-serif font-bold text-lg">SL</span>
-                        </div>
-                        <div className="flex flex-col leading-none">
-                            <span className="font-serif text-lg tracking-wide text-dark-green group-hover:text-orange-600 transition-colors">Singapore</span>
-                            <span className="text-[8px] uppercase tracking-[0.2em] text-dark-green/70">Life City</span>
-                        </div>
+                    <Link href="/" className="relative w-48 h-16">
+                        <Image
+                            src="/media/logo.png"
+                            alt="Singapore Life City"
+                            fill
+                            className="object-contain object-left mix-blend-multiply"
+                            priority
+                        />
                     </Link>
 
                     <Link href="/" className="text-sm font-bold uppercase tracking-widest text-dark-green hover:text-orange-600 transition-colors">

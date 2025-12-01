@@ -34,7 +34,7 @@ export default function FullScreenTabs() {
             src="/media/logo.png"
             alt="Singapore Life City"
             fill
-            className="object-contain object-left"
+            className="object-contain object-left mix-blend-multiply"
             priority
           />
         </div>

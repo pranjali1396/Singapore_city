@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Image from 'next/image'
 
 export default function ContactPage() {
     return (
@@ -6,14 +6,14 @@ export default function ContactPage() {
             {/* Header */}
             <header className="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-sm shadow-sm border-b border-stone-100">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                        <div className="w-10 h-10 bg-orange-500 rounded flex items-center justify-center border border-orange-600 text-white">
-                            <span className="font-serif font-bold text-xl">SL</span>
-                        </div>
-                        <div className="flex flex-col leading-none">
-                            <span className="font-serif text-xl tracking-wide">Singapore</span>
-                            <span className="text-[10px] uppercase tracking-[0.2em] text-stone-500">Life City</span>
-                        </div>
+                    <div className="relative w-48 h-16">
+                        <Image
+                            src="/media/logo.png"
+                            alt="Singapore Life City"
+                            fill
+                            className="object-contain object-left mix-blend-multiply"
+                            priority
+                        />
                     </div>
                     <Link
                         href="/"
