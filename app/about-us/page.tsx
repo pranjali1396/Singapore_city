@@ -7,12 +7,12 @@ export default function AboutUsPage() {
             {/* Header */}
             <header className="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-sm shadow-sm border-b border-stone-100">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-                    <div className="relative w-48 h-16">
+                    <div className="relative w-48 h-16 mix-blend-multiply">
                         <Image
                             src="/media/logo.png"
                             alt="Singapore Life City"
                             fill
-                            className="object-contain object-left mix-blend-multiply"
+                            className="object-contain object-left"
                             priority
                         />
                     </div>
@@ -27,6 +27,19 @@ export default function AboutUsPage() {
 
             {/* Main Content */}
             <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+                {/* Hero Image - Responsive */}
+                <div className="relative w-full mb-12 rounded-2xl overflow-hidden shadow-xl bg-stone-100">
+                    <picture>
+                        <source media="(min-width: 1024px)" srcSet="/media/About-desktop.png" />
+                        <source media="(min-width: 768px)" srcSet="/media/About-tablet.png" />
+                        <img
+                            src="/media/About-mobile.png"
+                            alt="About Chouhan Group"
+                            className="w-full h-auto"
+                        />
+                    </picture>
+                </div>
 
                 {/* Hero Section */}
                 <div className="text-center mb-16">

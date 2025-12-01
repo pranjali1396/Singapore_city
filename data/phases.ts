@@ -63,6 +63,7 @@ export const phases: Phase[] = [
       {
         title: 'Location',
         media: [
+          { type: 'image', src: '/media/Location.png', alt: 'Phase 1 & 2 Location Overview' },
           {
             type: 'map',
             src:
@@ -125,6 +126,7 @@ export const phases: Phase[] = [
       {
         title: 'Location',
         media: [
+          { type: 'image', src: '/media/Location.png', alt: 'Phase 4 Location Overview' },
           {
             type: 'map',
             src:

@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function ContactPage() {
     return (
@@ -6,12 +7,12 @@ export default function ContactPage() {
             {/* Header */}
             <header className="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-sm shadow-sm border-b border-stone-100">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-                    <div className="relative w-48 h-16">
+                    <div className="relative w-48 h-16 mix-blend-multiply">
                         <Image
                             src="/media/logo.png"
                             alt="Singapore Life City"
                             fill
-                            className="object-contain object-left mix-blend-multiply"
+                            className="object-contain object-left"
                             priority
                         />
                     </div>

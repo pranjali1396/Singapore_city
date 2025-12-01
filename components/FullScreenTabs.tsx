@@ -34,7 +34,7 @@ export default function FullScreenTabs() {
             src="/media/logo.png"
             alt="Singapore Life City"
             fill
-            className="object-contain object-left mix-blend-multiply"
+            className="object-contain object-left"
             priority
           />
         </div>
@@ -47,7 +47,7 @@ export default function FullScreenTabs() {
                 src="/media/ChouhanG.png"
                 alt="Chouhan Group Logo"
                 fill
-                className="object-contain mix-blend-multiply"
+                className="object-contain"
               />
             </div>
             <Link href="/contact" className="bg-dark-green hover:bg-dark-green/90 text-white font-bold py-1.5 px-3 sm:py-2 sm:px-6 rounded shadow-lg uppercase tracking-wide text-xs sm:text-sm transition whitespace-nowrap">
@@ -108,35 +108,37 @@ export default function FullScreenTabs() {
             ) : (
               <div className="w-full h-full bg-stone-100 flex items-center justify-center text-gray-500">No Image Available</div>
             )}
-            {/* Dark Overlay for Text Readability */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40"></div>
+            {/* Dark Overlay for Text Readability - Adjusted to be bottom-heavy */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
           </div>
 
           {/* Text Content Overlay */}
-          <div className="relative z-10 p-8 md:p-12 lg:p-16 flex flex-col justify-center min-h-[600px] md:min-h-[700px] max-w-3xl">
-            {/* Decorative Line */}
-            <div className="w-12 h-1 bg-orange-500 mb-8"></div>
+          <div className="relative z-10 p-6 md:p-10 lg:p-12 flex flex-col justify-start items-start min-h-[600px] md:min-h-[700px] max-w-xl h-full">
+            <div className="mt-8 md:mt-12">
+              {/* Decorative Line */}
+              <div className="w-10 h-1 bg-orange-500 mb-3"></div>
 
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-tight mb-2 text-white drop-shadow-lg">
-              {activePhase.shortLabel.split(' ').slice(0, 2).join(' ')} <br />
-              <span className="font-light text-cream">{activePhase.shortLabel.split(' ').slice(2).join(' ')}</span>
-            </h1>
+              <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl leading-tight mb-2 text-white drop-shadow-lg">
+                {activePhase.shortLabel.split(' ').slice(0, 2).join(' ')} <br />
+                <span className="font-light text-cream">{activePhase.shortLabel.split(' ').slice(2).join(' ')}</span>
+              </h1>
 
-            <p className="text-xs uppercase tracking-widest text-cream/90 mb-8">
-              AT SINGAPORE LIFE CITY<br />BY CHOUHAN GROUP
-            </p>
+              <p className="text-[10px] uppercase tracking-widest text-cream/90 mb-3">
+                AT SINGAPORE LIFE CITY<br />BY CHOUHAN GROUP
+              </p>
 
-            <div className="w-full h-px bg-white/30 mb-8"></div>
+              <div className="w-full h-px bg-white/30 mb-3 max-w-[200px]"></div>
+            </div>
 
-            <p className="text-white font-bold uppercase text-sm mb-6 tracking-wide">
-              {activePhase.id === 4 ? 'Premium Selection' : 'New Release | Now Selling'}
-            </p>
+            <div className="mt-24 md:mt-32 flex flex-col items-start gap-4">
+              <p className="text-white font-bold uppercase text-sm md:text-base tracking-wide drop-shadow-md">
+                {activePhase.id === 4 ? 'Premium Selection' : 'New Release | Now Selling'}
+              </p>
 
-
-
-            <Link href="/book-appointment" className="inline-block w-auto px-8 py-4 text-center bg-orange-500 hover:bg-orange-600 text-white font-bold uppercase text-sm tracking-widest transition duration-300 shadow-lg hover:shadow-xl">
-              Book an Appointment
-            </Link>
+              <Link href="/book-appointment" className="inline-block w-auto px-10 py-5 text-center bg-orange-500 hover:bg-orange-600 text-white font-bold uppercase text-base tracking-widest transition duration-300 shadow-lg hover:shadow-xl">
+                Book an Appointment
+              </Link>
+            </div>
           </div>
         </div>
 
@@ -167,11 +169,11 @@ export default function FullScreenTabs() {
 
       {/* Overview Section (Moved from Hero) */}
       <div className="relative z-20 w-full max-w-5xl mx-auto px-4 pb-16 pt-8">
-        <div className="text-center mb-10">
+        <div className="text-center mb-8">
           <h3 className="font-serif text-3xl md:text-4xl text-dark-green mb-3">Overview</h3>
           <div className="w-24 h-1 bg-orange-500 mx-auto rounded-full"></div>
         </div>
-        <div className="text-stone-600 text-sm md:text-base leading-relaxed space-y-4 text-center max-w-4xl mx-auto">
+        <div className="text-stone-600 text-sm md:text-base leading-relaxed space-y-4 text-left max-w-4xl">
           {activePhase.id === 4 ? (
             <>
               <p>
