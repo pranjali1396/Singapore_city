@@ -229,7 +229,7 @@ export default function ContactPage() {
                                     id="message"
                                     rows={4}
                                     className="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition resize-none"
-                                    placeholder="Tell us what you're looking for..."
+                                    placeholder="Tell us what you&apos;re looking for..."
                                 ></textarea>
                             </div>
 
@@ -260,7 +260,7 @@ export default function ContactPage() {
                 </div>
             </main>
 
-           
+
         </div>
     )
 }

@@ -137,7 +137,7 @@ export default function FullScreenTabs() {
               {activePhase.id === 4 ? (
                 <>
                   <p>
-                    Discover <strong className="text-white">Singapore Life City Phase 4, Bhilai</strong> – where opulence meets meticulous planning. Developed by <strong className="text-white">Chouhan Group & DHL Indiabulls</strong>, this premium phase embodies Singapore's legendary excellence in urban development, offering an unparalleled investment opportunity in residential plots and luxury bungalows.
+                    Discover <strong className="text-white">Singapore Life City Phase 4, Bhilai</strong> – where opulence meets meticulous planning. Developed by <strong className="text-white">Chouhan Group & DHL Indiabulls</strong>, this premium phase embodies Singapore&apos;s legendary excellence in urban development, offering an unparalleled investment opportunity in residential plots and luxury bungalows.
                   </p>
                   <p>
                     This meticulously planned smart township features premium plots (2400-4000 sq ft) and exclusive 3/4 BHK independent villas. With world-class amenities including landscaped entrance gates, underground utilities, modern sewage systems, and lush green spaces, Phase 4 delivers a self-reliant, sustainable lifestyle that combines affordability with sophistication in the heart of Bhilai.
@@ -146,10 +146,10 @@ export default function FullScreenTabs() {
               ) : (
                 <>
                   <p>
-                    Welcome to <strong className="text-white">Singapore Life City Phase 1, Bhilai</strong> – a premium plotting township in Surya Vihar by <strong className="text-white">Chouhan's & DHL Infrabulls</strong>. Inspired by Singapore's modern urban design, the project offers well-planned, sustainable, and affordable living with residential plots and provisions for future-ready homes.
+                    Welcome to <strong className="text-white">Singapore Life City Phase 1, Bhilai</strong> – a premium plotting township in Surya Vihar by <strong className="text-white">Chouhan&apos;s & DHL Infrabulls</strong>. Inspired by Singapore&apos;s modern urban design, the project offers well-planned, sustainable, and affordable living with residential plots and provisions for future-ready homes.
                   </p>
                   <p>
-                    The township features a grand landscaped entrance, wide concrete roads, underground electrification, landscaped gardens, jogging & cycling tracks, children's play areas, and a robust water and drainage system—creating a clean, safe, and modern living environment.
+                    The township features a grand landscaped entrance, wide concrete roads, underground electrification, landscaped gardens, jogging & cycling tracks, children&apos;s play areas, and a robust water and drainage system—creating a clean, safe, and modern living environment.
                   </p>
                   <p>
                     Designed to set a new benchmark in urban development, Singapore Life City brings together smart planning, green spaces, and top-quality infrastructure for a truly elevated lifestyle in Bhilai.
