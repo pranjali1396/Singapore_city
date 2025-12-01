@@ -390,7 +390,10 @@ export default function FullScreenTabs() {
 
           {/* Location Image */}
           {activePhase.sections.find(s => s.title === 'Location')?.media?.find(m => m.type === 'image') && (
-            <div className="w-full mb-8 rounded-xl overflow-hidden shadow-xl border border-stone-200">
+            <div
+              className="w-full mb-8 rounded-xl overflow-hidden shadow-xl border border-stone-200 cursor-pointer transition-transform hover:scale-[1.01]"
+              onClick={() => setSelectedImage(activePhase.sections.find(s => s.title === 'Location')!.media!.find(m => m.type === 'image')!.src)}
+            >
               <Image
                 src={activePhase.sections.find(s => s.title === 'Location')!.media!.find(m => m.type === 'image')!.src}
                 alt={activePhase.sections.find(s => s.title === 'Location')!.media!.find(m => m.type === 'image')!.alt || 'Location Overview'}
@@ -449,35 +452,39 @@ export default function FullScreenTabs() {
               </svg>
             </button>
 
-            {/* Previous Button */}
-            <button
-              onClick={(e) => {
-                e.stopPropagation()
-                const currentIdx = displayImages.findIndex(img => img.src === selectedImage)
-                const prevIdx = (currentIdx - 1 + displayImages.length) % displayImages.length
-                setSelectedImage(displayImages[prevIdx].src)
-              }}
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-md text-white p-3 rounded-full transition-all z-[101]"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
+            {/* Previous Button - Only show if image is in gallery */}
+            {displayImages.some(img => img.src === selectedImage) && (
+              <button
+                onClick={(e) => {
+                  e.stopPropagation()
+                  const currentIdx = displayImages.findIndex(img => img.src === selectedImage)
+                  const prevIdx = (currentIdx - 1 + displayImages.length) % displayImages.length
+                  setSelectedImage(displayImages[prevIdx].src)
+                }}
+                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-md text-white p-3 rounded-full transition-all z-[101]"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+            )}
 
-            {/* Next Button */}
-            <button
-              onClick={(e) => {
-                e.stopPropagation()
-                const currentIdx = displayImages.findIndex(img => img.src === selectedImage)
-                const nextIdx = (currentIdx + 1) % displayImages.length
-                setSelectedImage(displayImages[nextIdx].src)
-              }}
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-md text-white p-3 rounded-full transition-all z-[101]"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
+            {/* Next Button - Only show if image is in gallery */}
+            {displayImages.some(img => img.src === selectedImage) && (
+              <button
+                onClick={(e) => {
+                  e.stopPropagation()
+                  const currentIdx = displayImages.findIndex(img => img.src === selectedImage)
+                  const nextIdx = (currentIdx + 1) % displayImages.length
+                  setSelectedImage(displayImages[nextIdx].src)
+                }}
+                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-md text-white p-3 rounded-full transition-all z-[101]"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            )}
 
             <div className="relative w-full max-w-6xl aspect-video" onClick={(e) => e.stopPropagation()}>
               <Image
