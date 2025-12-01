@@ -42,7 +42,7 @@ export default function FullScreenTabs() {
         {/* Right Header Actions */}
         <div className="flex flex-col items-end gap-2">
           <div className="flex items-center gap-2 sm:gap-3">
-            <div className="relative w-16 h-10 sm:w-24 sm:h-12 hidden sm:block">
+            <div className="relative w-12 h-8 sm:w-24 sm:h-12">
               <Image
                 src="/media/ChouhanG.png"
                 alt="Chouhan Group Logo"
@@ -388,10 +388,24 @@ export default function FullScreenTabs() {
             <div className="w-24 h-1 bg-orange-500 mx-auto rounded-full"></div>
           </div>
 
-          {activePhase.sections.find(s => s.title === 'Location')?.media?.[0] && (
+          {/* Location Image */}
+          {activePhase.sections.find(s => s.title === 'Location')?.media?.find(m => m.type === 'image') && (
+            <div className="w-full mb-8 rounded-xl overflow-hidden shadow-xl border border-stone-200">
+              <Image
+                src={activePhase.sections.find(s => s.title === 'Location')!.media!.find(m => m.type === 'image')!.src}
+                alt={activePhase.sections.find(s => s.title === 'Location')!.media!.find(m => m.type === 'image')!.alt || 'Location Overview'}
+                width={1200}
+                height={675}
+                className="w-full h-auto"
+              />
+            </div>
+          )}
+
+          {/* Location Map */}
+          {activePhase.sections.find(s => s.title === 'Location')?.media?.find(m => m.type === 'map') && (
             <div className="w-full aspect-video md:aspect-[21/9] rounded-xl overflow-hidden shadow-2xl border border-stone-200">
               <iframe
-                src={activePhase.sections.find(s => s.title === 'Location')!.media![0].src}
+                src={activePhase.sections.find(s => s.title === 'Location')!.media!.find(m => m.type === 'map')!.src}
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
