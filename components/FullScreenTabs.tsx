@@ -68,13 +68,13 @@ export default function FullScreenTabs() {
       <div className="relative z-10 flex-grow flex flex-col justify-center items-center w-full max-w-6xl mx-auto px-4 py-4">
 
         {/* Tab Navigation Bar (Top of Card) */}
-        <div className="sticky top-[88px] z-40 w-full bg-cream/95 text-dark-green/80 flex items-center px-6 py-0 rounded-t-lg overflow-hidden shadow-md border-b border-stone-100">
+        <div className="sticky top-[88px] z-40 w-full bg-cream/95 text-dark-green/80 flex items-center px-4 md:px-6 py-0 rounded-t-lg overflow-x-auto overflow-y-hidden shadow-md border-b border-stone-100 scrollbar-hide">
           {targetPhases.map((phase) => (
             <button
               key={phase.id}
               onClick={() => setActivePhaseId(phase.id)}
               className={`
-                py-4 px-6 text-sm font-medium uppercase tracking-wider border-t-4 transition-colors
+                py-4 px-4 md:px-6 text-sm font-medium uppercase tracking-wider border-t-4 transition-colors flex-shrink-0 whitespace-nowrap
                 ${activePhaseId === phase.id
                   ? 'border-dark-green text-dark-green bg-white'
                   : 'border-transparent text-dark-green/60 hover:text-dark-green hover:bg-white/50'
@@ -84,10 +84,10 @@ export default function FullScreenTabs() {
               {phase.name}
             </button>
           ))}
-          <Link href="/gallery" className="ml-auto py-4 px-6 text-sm font-medium uppercase tracking-wider border-t-4 border-transparent text-dark-green/60 hover:text-dark-green hover:bg-white/50">
+          <Link href="/gallery" className="md:ml-auto py-4 px-4 md:px-6 text-sm font-medium uppercase tracking-wider border-t-4 border-transparent text-dark-green/60 hover:text-dark-green hover:bg-white/50 flex-shrink-0 whitespace-nowrap">
             Gallery
           </Link>
-          <Link href="/about-us" className="py-4 px-6 text-sm font-medium uppercase tracking-wider border-t-4 border-transparent text-dark-green/60 hover:text-dark-green hover:bg-white/50">
+          <Link href="/about-us" className="py-4 px-4 md:px-6 text-sm font-medium uppercase tracking-wider border-t-4 border-transparent text-dark-green/60 hover:text-dark-green hover:bg-white/50 flex-shrink-0 whitespace-nowrap">
             About Us
           </Link>
         </div>
