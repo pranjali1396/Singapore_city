@@ -47,7 +47,7 @@ export default function FullScreenTabs() {
                 src="/media/ChouhanG.png"
                 alt="Chouhan Group Logo"
                 fill
-                className="object-contain"
+                className="object-contain mix-blend-multiply"
               />
             </div>
             <Link href="/contact" className="bg-dark-green hover:bg-dark-green/90 text-white font-bold py-1.5 px-3 sm:py-2 sm:px-6 rounded shadow-lg uppercase tracking-wide text-xs sm:text-sm transition whitespace-nowrap">
@@ -132,31 +132,7 @@ export default function FullScreenTabs() {
               {activePhase.id === 4 ? 'Premium Selection' : 'New Release | Now Selling'}
             </p>
 
-            {/* Project Overview (SEO Optimized) */}
-            <div className="mb-8 text-white/90 text-sm md:text-base leading-relaxed space-y-4 border-l-2 border-orange-500 pl-4 bg-black/30 backdrop-blur-sm p-4 rounded-r-lg">
-              {activePhase.id === 4 ? (
-                <>
-                  <p>
-                    Discover <strong className="text-white">Singapore Life City Phase 4, Bhilai</strong> – where opulence meets meticulous planning. Developed by <strong className="text-white">Chouhan Group & DHL Indiabulls</strong>, this premium phase embodies Singapore&apos;s legendary excellence in urban development, offering an unparalleled investment opportunity in residential plots and luxury bungalows.
-                  </p>
-                  <p>
-                    This meticulously planned smart township features premium plots (2400-4000 sq ft) and exclusive 3/4 BHK independent villas. With world-class amenities including landscaped entrance gates, underground utilities, modern sewage systems, and lush green spaces, Phase 4 delivers a self-reliant, sustainable lifestyle that combines affordability with sophistication in the heart of Bhilai.
-                  </p>
-                </>
-              ) : (
-                <>
-                  <p>
-                    Welcome to <strong className="text-white">Singapore Life City Phase 1, Bhilai</strong> – a premium plotting township in Surya Vihar by <strong className="text-white">Chouhan&apos;s & DHL Infrabulls</strong>. Inspired by Singapore&apos;s modern urban design, the project offers well-planned, sustainable, and affordable living with residential plots and provisions for future-ready homes.
-                  </p>
-                  <p>
-                    The township features a grand landscaped entrance, wide concrete roads, underground electrification, landscaped gardens, jogging & cycling tracks, children&apos;s play areas, and a robust water and drainage system—creating a clean, safe, and modern living environment.
-                  </p>
-                  <p>
-                    Designed to set a new benchmark in urban development, Singapore Life City brings together smart planning, green spaces, and top-quality infrastructure for a truly elevated lifestyle in Bhilai.
-                  </p>
-                </>
-              )}
-            </div>
+
 
             <Link href="/book-appointment" className="inline-block w-auto px-8 py-4 text-center bg-orange-500 hover:bg-orange-600 text-white font-bold uppercase text-sm tracking-widest transition duration-300 shadow-lg hover:shadow-xl">
               Book an Appointment
@@ -187,6 +163,38 @@ export default function FullScreenTabs() {
         {[...Array(Math.max(0, 3 - displayImages.length))].map((_, i) => (
           <div key={`placeholder-${i}`} className="h-32 md:h-40 bg-stone-200 rounded-lg border border-stone-300"></div>
         ))}
+      </div>
+
+      {/* Overview Section (Moved from Hero) */}
+      <div className="relative z-20 w-full max-w-5xl mx-auto px-4 pb-16 pt-8">
+        <div className="text-center mb-10">
+          <h3 className="font-serif text-3xl md:text-4xl text-dark-green mb-3">Overview</h3>
+          <div className="w-24 h-1 bg-orange-500 mx-auto rounded-full"></div>
+        </div>
+        <div className="text-stone-600 text-sm md:text-base leading-relaxed space-y-4 text-center max-w-4xl mx-auto">
+          {activePhase.id === 4 ? (
+            <>
+              <p>
+                Discover <strong className="text-dark-green">Singapore Life City Phase 4, Bhilai</strong> – where opulence meets meticulous planning. Developed by <strong className="text-dark-green">Chouhan Group & DHL Indiabulls</strong>, this premium phase embodies Singapore&apos;s legendary excellence in urban development, offering an unparalleled investment opportunity in residential plots and luxury bungalows.
+              </p>
+              <p>
+                This meticulously planned smart township features premium plots (2400-4000 sq ft) and exclusive 3/4 BHK independent villas. With world-class amenities including landscaped entrance gates, underground utilities, modern sewage systems, and lush green spaces, Phase 4 delivers a self-reliant, sustainable lifestyle that combines affordability with sophistication in the heart of Bhilai.
+              </p>
+            </>
+          ) : (
+            <>
+              <p>
+                Welcome to <strong className="text-dark-green">Singapore Life City Phase 1, Bhilai</strong> – a premium plotting township in Surya Vihar by <strong className="text-dark-green">Chouhan&apos;s & DHL Infrabulls</strong>. Inspired by Singapore&apos;s modern urban design, the project offers well-planned, sustainable, and affordable living with residential plots and provisions for future-ready homes.
+              </p>
+              <p>
+                The township features a grand landscaped entrance, wide concrete roads, underground electrification, landscaped gardens, jogging & cycling tracks, children&apos;s play areas, and a robust water and drainage system—creating a clean, safe, and modern living environment.
+              </p>
+              <p>
+                Designed to set a new benchmark in urban development, Singapore Life City brings together smart planning, green spaces, and top-quality infrastructure for a truly elevated lifestyle in Bhilai.
+              </p>
+            </>
+          )}
+        </div>
       </div>
 
       {/* Amenities Section (Modern Text Layout) */}
