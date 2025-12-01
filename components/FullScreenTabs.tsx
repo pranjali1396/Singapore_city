@@ -10,6 +10,7 @@ import ImageCarousel from './ImageCarousel'
 export default function FullScreenTabs() {
   // Default to Phase 1
   const [activePhaseId, setActivePhaseId] = useState(1)
+  const [selectedImage, setSelectedImage] = useState<string | null>(null)
 
   // Filter only the phases we want (1 & 2 combined, and 4)
   const targetPhases = phases.filter(p => [1, 4].includes(p.id))
@@ -22,36 +23,26 @@ export default function FullScreenTabs() {
   return (
     <div className="relative w-full min-h-screen bg-cream font-sans text-dark-green flex flex-col">
 
-      {/* Background Image - Blurred/Darkened */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="https://images.unsplash.com/photo-1600596542815-2a4d9fdd4070?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
-          alt="Background"
-          fill
-          className="object-cover opacity-40 blur-sm"
-          priority
-        />
-        <div className="absolute inset-0 bg-cream/30" />
-      </div>
+      {/* Background Gradient */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-stone-100 via-cream to-stone-200" />
 
       {/* Top Header Area (Logo & Register Button) */}
       <div className="sticky top-0 z-50 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-4 flex justify-between items-start bg-cream/90 backdrop-blur-sm shadow-sm">
         {/* Logo Placeholder */}
-        <div className="flex items-center gap-2">
-          {/* Simulating the logo from the image */}
-          <div className="w-10 h-10 bg-dark-green rounded flex items-center justify-center border border-dark-green text-cream">
-            <span className="font-serif font-bold text-xl">SL</span>
-          </div>
-          <div className="flex flex-col leading-none">
-            <span className="font-serif text-xl tracking-wide text-dark-green">Singapore</span>
-            <span className="text-[10px] uppercase tracking-[0.2em] text-dark-green/70">Life City</span>
-          </div>
+        <div className="relative w-48 h-16 -mt-2">
+          <Image
+            src="/media/logo.png"
+            alt="Singapore Life City"
+            fill
+            className="object-contain object-left"
+            priority
+          />
         </div>
 
         {/* Right Header Actions */}
         <div className="flex flex-col items-end gap-2">
-          <div className="flex items-center gap-3">
-            <div className="relative w-24 h-12">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <div className="relative w-16 h-10 sm:w-24 sm:h-12 hidden sm:block">
               <Image
                 src="/media/ChouhanG.png"
                 alt="Chouhan Group Logo"
@@ -59,8 +50,8 @@ export default function FullScreenTabs() {
                 className="object-contain"
               />
             </div>
-            <Link href="/contact" className="bg-dark-green hover:bg-dark-green/90 text-white font-bold py-2 px-6 rounded shadow-lg uppercase tracking-wide text-sm transition">
-              Register Today
+            <Link href="/contact" className="bg-dark-green hover:bg-dark-green/90 text-white font-bold py-1.5 px-3 sm:py-2 sm:px-6 rounded shadow-lg uppercase tracking-wide text-xs sm:text-sm transition whitespace-nowrap">
+              Register
             </Link>
           </div>
           <div className="text-xs font-medium text-dark-green space-x-2 mr-2">
@@ -155,10 +146,13 @@ export default function FullScreenTabs() {
               ) : (
                 <>
                   <p>
-                    Experience the pinnacle of modern living at <strong className="text-white">Singapore Life City, Bhilai</strong> – a landmark township in Surya Vihar by <strong className="text-white">Chouhan Group & DHL Infrabulls</strong>. Inspired by the architectural excellence of Singapore, this project redefines urban lifestyle with sustainable planning and premium residential plots.
+                    Welcome to <strong className="text-white">Singapore Life City Phase 1, Bhilai</strong> – a premium plotting township in Surya Vihar by <strong className="text-white">Chouhan's & DHL Infrabulls</strong>. Inspired by Singapore's modern urban design, the project offers well-planned, sustainable, and affordable living with residential plots and provisions for future-ready homes.
                   </p>
                   <p>
-                    Designed for a smart, green future, the township features world-class infrastructure including a grand landscaped entrance, underground electrification, wide concrete roads, and dedicated cycling & jogging tracks. With lush gardens, children's play areas, and robust water & drainage systems, Singapore Life City offers a perfect blend of luxury, comfort, and affordability in the heart of Bhilai.
+                    The township features a grand landscaped entrance, wide concrete roads, underground electrification, landscaped gardens, jogging & cycling tracks, children's play areas, and a robust water and drainage system—creating a clean, safe, and modern living environment.
+                  </p>
+                  <p>
+                    Designed to set a new benchmark in urban development, Singapore Life City brings together smart planning, green spaces, and top-quality infrastructure for a truly elevated lifestyle in Bhilai.
                   </p>
                 </>
               )}
@@ -175,7 +169,11 @@ export default function FullScreenTabs() {
       {/* Bottom Thumbnails Row */}
       <div className="relative z-20 w-full max-w-6xl mx-auto px-4 pb-8 grid grid-cols-3 gap-4">
         {displayImages.map((img, idx) => (
-          <div key={idx} className="relative h-32 md:h-40 rounded-lg overflow-hidden border-2 border-transparent hover:border-dark-green transition cursor-pointer group">
+          <div
+            key={idx}
+            onClick={() => setSelectedImage(img.src)}
+            className="relative h-32 md:h-40 rounded-lg overflow-hidden border-2 border-transparent hover:border-dark-green transition cursor-pointer group"
+          >
             <Image
               src={img.src}
               alt={`Thumbnail ${idx}`}
@@ -412,6 +410,62 @@ export default function FullScreenTabs() {
         </div>
       )}
 
-    </div>
+
+
+      {/* Image Modal */}
+      {
+        selectedImage && (
+          <div className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4" onClick={() => setSelectedImage(null)}>
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-4 right-4 text-white hover:text-orange-500 transition-colors z-[101]"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            {/* Previous Button */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation()
+                const currentIdx = displayImages.findIndex(img => img.src === selectedImage)
+                const prevIdx = (currentIdx - 1 + displayImages.length) % displayImages.length
+                setSelectedImage(displayImages[prevIdx].src)
+              }}
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-md text-white p-3 rounded-full transition-all z-[101]"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            {/* Next Button */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation()
+                const currentIdx = displayImages.findIndex(img => img.src === selectedImage)
+                const nextIdx = (currentIdx + 1) % displayImages.length
+                setSelectedImage(displayImages[nextIdx].src)
+              }}
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-md text-white p-3 rounded-full transition-all z-[101]"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            <div className="relative w-full max-w-6xl aspect-video" onClick={(e) => e.stopPropagation()}>
+              <Image
+                src={selectedImage}
+                alt="Full View"
+                fill
+                className="object-contain"
+              />
+            </div>
+          </div>
+        )
+      }
+    </div >
   )
 }

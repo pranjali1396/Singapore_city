@@ -23,7 +23,7 @@ export const phases: Phase[] = [
     name: 'Phase 1 & 2',
     shortLabel: 'Singapore Life City 1 & 2',
     description:
-      'Fully developed and ready-to-build plots. Completed infrastructure with immediate construction ready. Family-friendly layout with attractive pre-launch offers.',
+      'Welcome to Singapore Life City Phase 1, Bhilai - a premium plotting township offering well-planned, sustainable, and affordable living with modern infrastructure.',
     meta: {
       seoTitle: 'Singapore Life City – Phase 1 & 2 | Surya Vihar Bhilai',
       seoDescription:
@@ -31,6 +31,10 @@ export const phases: Phase[] = [
     },
     theme: { colorKey: 'phase1' },
     sections: [
+      {
+        title: 'Welcome to Singapore Life City Phase 1, Bhilai',
+        body: 'Singapore Life City Phase 1, located in Surya Vihar, Bhilai, is a premium plotting township by Chouhan\'s & DHL Infrabulls. Inspired by Singapore\'s modern urban design, the project offers well-planned, sustainable, and affordable living with residential plots and provisions for future-ready homes.\n\nThe township features a grand landscaped entrance, wide concrete roads, underground electrification, landscaped gardens, jogging & cycling tracks, children\'s play areas, and a robust water and drainage system—creating a clean, safe, and modern living environment.\n\nDesigned to set a new benchmark in urban development, Singapore Life City brings together smart planning, green spaces, and top-quality infrastructure for a truly elevated lifestyle in Bhilai.',
+      },
       {
         title: 'Highlights',
         body: 'Landscaped roads, parks, essential utilities, family-friendly layout, internal roads, play areas.',
@@ -132,9 +136,9 @@ export const phases: Phase[] = [
       {
         title: 'Gallery',
         media: [
-          { type: 'image', src: '/media/Phase 4/Photos and Videos_/DJI_20250612115311_0039_D.JPG', alt: 'Phase 4 Aerial 1' },
-          { type: 'image', src: '/media/Phase 4/Photos and Videos_/DJI_20250612115318_0040_D.JPG', alt: 'Phase 4 Aerial 2' },
-          { type: 'image', src: '/media/Phase 4/Photos and Videos_/DJI_20250612115324_0042_D.JPG', alt: 'Phase 4 Aerial 3' },
+          { type: 'image', src: '/media/Phase 1/Photos and Videos_/singapore_life_city_phase2_3.webp', alt: 'Phase 4 Aerial 1' },
+          { type: 'image', src: '/media/Phase 4/Photos and Videos_/singa_phase-4.webp', alt: 'Phase 4 Aerial 2' },
+          { type: 'image', src: '/media/Phase 1/Photos and Videos_/singapore_life_city_phase2_3.webp', alt: 'Phase 4 Aerial 3' },
           { type: 'image', src: '/media/Phase 4/Photos and Videos_/bcw44.webp', alt: 'Bungalow View' },
           { type: 'image', src: '/media/Phase 4/Photos and Videos_/singa_phase-4.webp', alt: 'Phase 4 Entrance' },
           { type: 'image', src: '/media/Phase 4/Photos and Videos_/singapore_life_city_p4_1 (1).webp', alt: 'Street View' },

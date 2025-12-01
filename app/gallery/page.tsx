@@ -7,6 +7,7 @@ import { useState } from 'react'
 
 export default function GalleryPage() {
     const [activePhaseId, setActivePhaseId] = useState(1)
+    const [selectedImage, setSelectedImage] = useState<string | null>(null)
 
     // Get images for the active phase
     const activePhase = phases.find(p => p.id === activePhaseId)
@@ -72,7 +73,11 @@ export default function GalleryPage() {
                 {/* Image Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {images.map((img, idx) => (
-                        <div key={idx} className="group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500">
+                        <div
+                            key={idx}
+                            onClick={() => setSelectedImage(img.src)}
+                            className="group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 cursor-pointer"
+                        >
                             <Image
                                 src={img.src}
                                 alt={img.alt || 'Gallery Image'}
@@ -87,6 +92,62 @@ export default function GalleryPage() {
                     ))}
                 </div>
             </div>
-        </div>
+
+
+            {/* Image Modal */}
+            {
+                selectedImage && (
+                    <div className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4" onClick={() => setSelectedImage(null)}>
+                        <button
+                            onClick={() => setSelectedImage(null)}
+                            className="absolute top-4 right-4 text-white hover:text-orange-500 transition-colors z-[101]"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+
+                        {/* Previous Button */}
+                        <button
+                            onClick={(e) => {
+                                e.stopPropagation()
+                                const currentIdx = images.findIndex(img => img.src === selectedImage)
+                                const prevIdx = (currentIdx - 1 + images.length) % images.length
+                                setSelectedImage(images[prevIdx].src)
+                            }}
+                            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-md text-white p-3 rounded-full transition-all z-[101]"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+
+                        {/* Next Button */}
+                        <button
+                            onClick={(e) => {
+                                e.stopPropagation()
+                                const currentIdx = images.findIndex(img => img.src === selectedImage)
+                                const nextIdx = (currentIdx + 1) % images.length
+                                setSelectedImage(images[nextIdx].src)
+                            }}
+                            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-md text-white p-3 rounded-full transition-all z-[101]"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+
+                        <div className="relative w-full max-w-6xl aspect-video" onClick={(e) => e.stopPropagation()}>
+                            <Image
+                                src={selectedImage}
+                                alt="Full View"
+                                fill
+                                className="object-contain"
+                            />
+                        </div>
+                    </div>
+                )
+            }
+        </div >
     )
 }

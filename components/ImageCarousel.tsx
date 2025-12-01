@@ -11,6 +11,7 @@ interface ImageCarouselProps {
 
 export default function ImageCarousel({ images }: ImageCarouselProps) {
     const [currentIndex, setCurrentIndex] = useState(0)
+    const [selectedImage, setSelectedImage] = useState<string | null>(null)
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -37,7 +38,10 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
                 <div className="w-24 h-1 bg-orange-500 mx-auto rounded-full"></div>
             </div>
 
-            <div className="relative aspect-video md:aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl border border-stone-200 group">
+            <div
+                className="relative aspect-video md:aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl border border-stone-200 group cursor-pointer"
+                onClick={() => setSelectedImage(images[currentIndex].src)}
+            >
                 <AnimatePresence mode="wait">
                     <motion.div
                         key={currentIndex}
@@ -85,6 +89,28 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
                     ))}
                 </div>
             </div>
+
+            {/* Image Modal */}
+            {selectedImage && (
+                <div className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4" onClick={() => setSelectedImage(null)}>
+                    <button
+                        onClick={() => setSelectedImage(null)}
+                        className="absolute top-4 right-4 text-white hover:text-orange-500 transition-colors z-[101]"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                    <div className="relative w-full max-w-6xl aspect-video" onClick={(e) => e.stopPropagation()}>
+                        <Image
+                            src={selectedImage}
+                            alt="Full View"
+                            fill
+                            className="object-contain"
+                        />
+                    </div>
+                </div>
+            )}
         </div>
     )
 }

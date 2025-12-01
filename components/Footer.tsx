@@ -56,8 +56,8 @@ export default function Footer() {
                 <p className="text-sm">Near IIT Bhilai, Surya Vihar Road, Village Kutelabhata, Bhilai, Chhattisgarh</p>
               </div>
               <div className="pt-2">
-                <p className="font-medium text-stone-900">+91 98765 43210</p>
-                <p>info@singaporelifecity.com</p>
+                <p className="font-medium text-stone-900">+91 95111 21113</p>
+                <p>CHOUHANHOUSING@GMAIL.COM</p>
               </div>
             </div>
           </div>
