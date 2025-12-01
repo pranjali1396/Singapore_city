@@ -14,7 +14,7 @@ export default function GalleryPage() {
     const gallerySection = activePhase?.sections.find(s => s.title === 'Gallery')
     const images = gallerySection?.media?.map(media => ({
         ...media,
-        phaseName: activePhase.shortLabel
+        phaseName: activePhase?.shortLabel
     })) || []
 
     return (
