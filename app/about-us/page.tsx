@@ -28,19 +28,6 @@ export default function AboutUsPage() {
             {/* Main Content */}
             <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
-                {/* Hero Image - Responsive */}
-                <div className="relative w-full mb-12 rounded-2xl overflow-hidden shadow-xl bg-stone-100">
-                    <picture>
-                        <source media="(min-width: 1024px)" srcSet="/media/About-desktop.png" />
-                        <source media="(min-width: 768px)" srcSet="/media/About-tablet.png" />
-                        <img
-                            src="/media/About-mobile.png"
-                            alt="About Chouhan Group"
-                            className="w-full h-auto"
-                        />
-                    </picture>
-                </div>
-
                 {/* Hero Section */}
                 <div className="text-center mb-16">
                     <h1 className="font-serif text-4xl md:text-5xl text-stone-900 mb-4">About Chouhan Group</h1>
