@@ -7,6 +7,7 @@ export const metadata: Metadata = {
 }
 
 import { Playfair_Display, Lato } from 'next/font/google'
+import Script from 'next/script'
 import Footer from '@/components/Footer'
 
 const playfair = Playfair_Display({
@@ -32,6 +33,10 @@ export default function RootLayout({
       <body className="font-sans bg-cream text-dark-green antialiased">
         {children}
         <Footer />
+        <Script
+          src="/crm-integration.min.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   )

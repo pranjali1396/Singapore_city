@@ -128,6 +128,7 @@ export default function ContactPage() {
                                     <input
                                         type="text"
                                         id="firstName"
+                                        name="firstName"
                                         className="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition"
                                         placeholder="John"
                                     />
@@ -137,6 +138,7 @@ export default function ContactPage() {
                                     <input
                                         type="text"
                                         id="lastName"
+                                        name="lastName"
                                         className="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition"
                                         placeholder="Doe"
                                     />
@@ -148,6 +150,7 @@ export default function ContactPage() {
                                 <input
                                     type="email"
                                     id="email"
+                                    name="email"
                                     className="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition"
                                     placeholder="john@example.com"
                                 />
@@ -158,6 +161,7 @@ export default function ContactPage() {
                                 <input
                                     type="text"
                                     id="city"
+                                    name="city"
                                     className="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition"
                                     placeholder="Bhilai, India"
                                 />
@@ -168,6 +172,7 @@ export default function ContactPage() {
                                 <input
                                     type="tel"
                                     id="phone"
+                                    name="phone"
                                     className="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition"
                                     placeholder="+91 98765 43210"
                                 />
@@ -178,6 +183,7 @@ export default function ContactPage() {
                                     <label htmlFor="phase" className="block text-sm font-medium text-stone-700 mb-2">Phase of Interest</label>
                                     <select
                                         id="phase"
+                                        name="phase"
                                         className="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition"
                                     >
                                         <option>Select Phase</option>
@@ -190,6 +196,7 @@ export default function ContactPage() {
                                     <label htmlFor="propertyType" className="block text-sm font-medium text-stone-700 mb-2">Property Type</label>
                                     <select
                                         id="propertyType"
+                                        name="propertyType"
                                         className="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition"
                                     >
                                         <option>Select Type</option>
@@ -218,6 +225,7 @@ export default function ContactPage() {
                                     <input
                                         type="text"
                                         id="source"
+                                        name="source"
                                         className="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition"
                                         placeholder="e.g. Google, Friend"
                                     />
@@ -228,6 +236,7 @@ export default function ContactPage() {
                                 <label htmlFor="message" className="block text-sm font-medium text-stone-700 mb-2">Message</label>
                                 <textarea
                                     id="message"
+                                    name="message"
                                     rows={4}
                                     className="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition resize-none"
                                     placeholder="Tell us what you&apos;re looking for..."
@@ -236,7 +245,7 @@ export default function ContactPage() {
 
                             <div className="space-y-4">
                                 <button
-                                    type="button"
+                                    type="submit"
                                     className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-6 rounded-lg shadow-lg uppercase tracking-wide text-sm transition transform hover:scale-[1.02]"
                                 >
                                     Submit
